@@ -1,12 +1,12 @@
-# Web clients
+# myKmail Web clients
 
-This project is a monorepo hosting the proton web clients. It includes the web applications, their dependencies & shared modules as well as all tooling surrounding development of the web clients (as well as some additional miscellaneous things).
+This project is a monorepo hosting the mykmail web clients. It includes the web applications, their dependencies & shared modules as well as all tooling surrounding development of the web clients (as well as some additional miscellaneous things).
 
--   <img src="./applications/mail/src/assets/mail.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Mail</span>
--   <img src="./applications/calendar/src/assets/protoncalendar.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Calendar</span>
--   <img src="./applications/drive/src/assets/protondrive.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Drive</span>
--   <img src="./applications/account/src/assets/protonaccount.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Account</span>
--   <img src="./applications/vpn-settings/src/assets/vpn.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton VPN Account</span>
+-   <img src="./applications/mail/src/assets/mail.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">myKmail</span>
+-   <img src="./applications/calendar/src/assets/protoncalendar.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">myKmail Calendar</span>
+-   <img src="./applications/drive/src/assets/protondrive.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">myKmail Drive</span>
+-   <img src="./applications/account/src/assets/protonaccount.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">myKmail Account</span>
+-   <img src="./applications/vpn-settings/src/assets/vpn.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">myKmail VPN Account</span>
 
 Technically, this monorepo is based on Yarn 2 & Yarn Workspaces, with unified versioning for all packages inside.
 
@@ -20,8 +20,8 @@ You'll need to have the following environment to work with this project
 
 ```shell
 # Clone the project
-git clone https://github.com/ProtonMail/WebClients.git
-git clone git@github.com:ProtonMail/WebClients.git
+git clone https://github.com/myKloud/mykmail-web.git
+git clone git@github.com:myKloud/mykmail-web.git
 
 # Install all dependencies for the entire monorepo & symlink
 # local dependents to one another
@@ -38,9 +38,9 @@ For additional details on how to interact with the monorepo, see the [yarn docs]
 
 You can help us to translate the application on crowdin.
 
--   For proton-mail, proton-drive, proton-account: [Crowdin ProtonMail](https://crowdin.com/project/protonmail)
--   For proton-calendar: [Crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
--   For proton-vpnsettings: [Crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
+-   For myKmail, myKmail-drive, myKmail-account: [Crowdin ProtonMail](https://crowdin.com/project/protonmail)
+-   For myKmail-calendar: [Crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
+-   For myKmail-vpnsettings: [Crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
 
 ## License
 
