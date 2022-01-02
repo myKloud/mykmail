@@ -34,13 +34,6 @@ yarn workspace proton-mail start
 
 For additional details on how to interact with the monorepo, see the [yarn docs](https://yarnpkg.com/) for reference.
 
-## Help us to translate the project
-
-You can help us to translate the application on crowdin.
-
--   For myKmail, myKmail-drive, myKmail-account: [Crowdin ProtonMail](https://crowdin.com/project/protonmail)
--   For myKmail-calendar: [Crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
--   For myKmail-vpnsettings: [Crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
 
 ## License
 
