@@ -1,0 +1,115 @@
+@import "../../common/style/fonts.scss";
+@import "../../common/style/variables.scss";
+
+
+
+
+
+.footer {
+    color: #f6f6f6;
+    width: 100%;
+    background-color: #292d45;
+    padding: 5.438rem 4.25rem 4.25rem 5.438rem;
+  
+    .first_line {
+      height: 49px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer_logo {
+      width: 213px;
+      height: 49px;
+      background-image: url(../../common/assets/footer_logo.png);
+      background-repeat: no-repeat;
+      background-size: 213px;
+    }
+  
+    .link_container {
+      height: 24px;
+      font-size: 16px;
+      line-height: 1.75;
+      margin-top: 13px;
+    //   font-weight: 400;
+    }
+  
+    .link_container  > a{
+      color: inherit;
+      text-decoration: inherit;
+      
+    }
+  
+    .link_container  > a:first-child {
+      margin-right: 2rem;
+    }
+  
+    .second_line {
+      height: 36px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+  
+    .copyright {
+      font-size: 14px;
+      font-weight: 200;
+      margin-top: 8px;
+      margin-bottom: 7px;
+    }
+  
+    .join {
+      font-size: 16px;
+      height: 24px;
+      margin-top: 7px;
+      margin-bottom: 5px;
+      font-weight: 300;
+    }
+  
+    .flex{
+      display: flex;
+      gap:15px;
+    }
+  
+    img {
+      cursor: pointer;
+    }
+   }
+  
+   @media only screen and (max-width: 768px) {
+    .footer {
+      padding: 3.5rem 0 3.5rem 1.75rem !important;
+  
+      .first_line {
+        display: grid !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+      }
+  
+      .footer_logo {
+        width: 138px !important;
+        height: 35px !important;
+        background-image: url(../../common/assets/footer_logo.png);
+        background-size: 141px;
+      }
+  
+      .link_container {
+        display: grid !important;
+        height: auto !important;
+        // margin-top: 24px;
+      }
+  
+      .mr-8 {
+        margin-right: 0 !important;
+        margin-bottom: 16px !important;
+      }
+  
+      .second_line {
+        display: grid !important;
+        height: auto !important;
+        margin-top: 24px !important;
+      }
+      .copyright {
+        margin: 0px !important;
+        margin-bottom: 24px !important;
+      }
+    }
+  }

@@ -198,7 +198,7 @@ export const DEFAULT_EVENT_DURATION = 30;
 
 export const COLORS = {
     BLACK: '#000',
-    WHITE: '#FFF',
+    WHITE: 'white',
 };
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;

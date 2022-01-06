@@ -165,7 +165,7 @@ export const insertCustomStyle = (document: Document) => {
             font-size: .875rem; /* 14 */
             line-height: 1.65;
             color: #222;
-            background: #fff;
+            background: white;
             /* to fix, CSS var are not passing through the iframe */
             word-wrap: break-word;
             margin: 0;

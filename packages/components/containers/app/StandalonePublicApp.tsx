@@ -13,6 +13,7 @@ const StandalonePublicApp = ({ onLogin, locales }: Props) => {
         <StandardPublicApp locales={locales}>
             <ProminentContainer>
                 <MinimalLoginContainer onLogin={onLogin} />
+                
             </ProminentContainer>
         </StandardPublicApp>
     );

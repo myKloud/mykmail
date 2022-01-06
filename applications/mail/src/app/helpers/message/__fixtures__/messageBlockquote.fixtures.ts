@@ -72,7 +72,7 @@ const aol1 = `
 
 
 
- <div id="AOLMsgPart_0_4d68a632-fe65-4f6d-ace2-292ac1b91f1f" style="margin: 0px;font-family: Tahoma, Verdana, Arial, Sans-Serif;font-size: 12px;color: #000;background-color: #fff;">
+ <div id="AOLMsgPart_0_4d68a632-fe65-4f6d-ace2-292ac1b91f1f" style="margin: 0px;font-family: Tahoma, Verdana, Arial, Sans-Serif;font-size: 12px;color: #000;background-color: white;">
 
  <pre style="font-size: 9pt;"><tt>Hi
  </tt></pre>

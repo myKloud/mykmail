@@ -4,6 +4,7 @@ import Button, { ButtonProps } from './Button';
 export type PrimaryButtonProps = Omit<ButtonProps, 'color'>;
 
 const PrimaryButton = (props: PrimaryButtonProps, ref: Ref<HTMLButtonElement>) => {
+    console.log(props)
     return <Button color="norm" ref={ref} {...props} />;
 };
 

@@ -13,6 +13,7 @@ import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, Chall
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
+import "../../../mykloud/components/login/login.scss";
 
 const UnlockForm = ({
     onSubmit,
@@ -51,7 +52,7 @@ const UnlockForm = ({
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
-                <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
+                <PrimaryButton className="mykloud_login_btn" type="submit" loading={loading} data-cy-login="submit mailbox password">
                     {c('Action').t`Submit`}
                 </PrimaryButton>
             </div>
@@ -144,8 +145,9 @@ const LoginForm = ({
                 </div>
             )}
             <form
+            
                 name="loginForm"
-                className={challengeLoading ? 'hidden' : undefined}
+                className={challengeLoading ? 'hidden' : "mykloud_login_form" }
                 onSubmit={(event) => {
                     event.preventDefault();
                     const run = async () => {
@@ -174,9 +176,12 @@ const LoginForm = ({
                         }}
                     />
                 )}
-                <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
+                <h2 className="mykmail_login_title_h2">Login to your account</h2>
+	            <p className="mykmail_login_title_p">Enter your username and password</p>
+                {/* <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label> */}
                 <div className="mb1">
                     <Input
+                        className="mykmail_login_input"
                         type="text"
                         name="login"
                         ref={usernameRef}
@@ -192,9 +197,10 @@ const LoginForm = ({
                         data-cy-login="username"
                     />
                 </div>
-                <Label htmlFor="password">{c('Label').t`Password`}</Label>
+                {/* <Label htmlFor="password">{c('Label').t`Password`}</Label> */}
                 <div className="mb1">
                     <PasswordInput
+                        
                         name="password"
                         autoComplete="current-password"
                         id="password"

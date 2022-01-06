@@ -73,7 +73,7 @@
       <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
     </filter>
     <clipPath id="clip0">
-      <path fill="#fff" d="M0 0h308v160H0z"/>
+      <path fill="white" d="M0 0h308v160H0z"/>
     </clipPath>
   </defs>
 </svg>
