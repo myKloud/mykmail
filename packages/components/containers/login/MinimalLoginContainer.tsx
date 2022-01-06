@@ -6,7 +6,8 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput, PrimaryButton } from '../../components';
+import { FullLoader, Input, Label, LinkButton, PasswordInput} from '../../components';
+import PrimaryButton from "../../../mykloud/components/loginButton/PrimaryButtonCus"
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 
@@ -52,7 +53,7 @@ const UnlockForm = ({
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
-                <PrimaryButton className="mykloud_login_btn" type="submit" loading={loading} data-cy-login="submit mailbox password">
+                <PrimaryButton  type="submit" loading={loading} data-cy-login="submit mailbox password">
                     {c('Action').t`Submit`}
                 </PrimaryButton>
             </div>
