@@ -1,7 +1,7 @@
 @import '../../common/style/fonts.scss';
 @import '../../common/style/variables.scss';
 
-.mykloud_login_container {
+.mykloud-login-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -13,7 +13,7 @@
 	overflow: auto;
 }
 
-.mykloud_login_form {
+.mykloud-login-form {
 	width: 95%;
 	max-width: 700px;
 	display: flex;
@@ -26,7 +26,7 @@
 	border-radius: 6px;
 }
 
-.mykmail_login_title_h2 {
+.mykmail-login-title-h2 {
 	margin: 0;
 	align-self: center;
 	z-index: 10;
@@ -35,7 +35,7 @@
 	font-weight: 900 !important;
 }
 
-.mykmail_login_title_p {
+.mykmail-login-title-p {
 	margin: 0;
 	margin-bottom: 5%;
 	align-self: center;
@@ -45,7 +45,7 @@
 	color: #45536c;
 }
 
-.mykmail_login_input {
+.mykmail-login-input {
 	width: 100% !important;
 	height: 56px !important;
 	padding: 0 16px !important;
@@ -59,11 +59,11 @@
 	outline: none !important;
 }
 
-.mykmail_login_input:focus:focus-within {
+.mykmail-login-input:focus:focus-within {
 	border: 1px solid #445da7 !important;
 }
 
-.mykloud_login_btn {
+.mykloud-login-btn {
 	height: 64px !important;
 	width: 100% !important;
 	border: none !important;
@@ -76,14 +76,11 @@
 }
 
 @media screen and (max-width: 767px) {
-	.mykloud_login_container {
+	.mykloud-login-container {
 		justify-content: space-between;
 	}
-	.login_header {
-		height: 50px;
-	}
-
-	.mykloud_login_form {
+	
+	.mykloud-login-form{
 		width: auto;
 		max-width: 600px;
 		position: relative;
@@ -93,7 +90,7 @@
 		border: none !important;
 	}
 
-	.mykmail_login_title_h2 {
+	.mykmail-login-title-h2 {
 		align-self: flex-start;
 		z-index: 10;
 		color: #1b1616;
@@ -101,7 +98,7 @@
 		font-weight: 700;
 	}
 
-	.mykmail_login_title_p {
+	.mykmail-login-title-p {
 		align-self: flex-start;
 		z-index: 10;
 		font-size: 15px;
@@ -109,11 +106,11 @@
 		color: #45536c;
 	}
 
-	.mykloud_login_btn {
+	.mykloud-login-btn {
 		height: 7vh !important;
 	}
 
-	.mykmail_login_input {
+	.mykmail-login-input {
 		height: 6vh !important;
 	}
 }

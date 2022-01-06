@@ -1,7 +1,7 @@
 @import '../../common/style/fonts.scss';
 @import '../../common/style/variables.scss';
 
-.header_container {
+.header-container {
 	display: flex;
 	justify-content: space-between;
 	margin-left: 56px !important;
@@ -9,29 +9,29 @@
 	margin-top: 34px !important;
 	margin-bottom: 20px !important;
 
-	.mykloud_logo {
+	.mykloud-logo {
 		width: 150px;
 		height: 54px;
-		background-image: url(../../common/assets/myKloud_logo.png);
+		background-image: url(../../common/assets/mykloud_logo.png);
 		background-repeat: no-repeat;
 		background-size: 150px;
 		cursor: pointer;
 	}
 
-	.right_side {
+	.right-side {
 		width: 343.25px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 
-	.right_text {
+	.right-text {
 		font-size: 16px;
 		line-height: 1.75;
 		color: $text_color;
 	}
 
-	.signin_btn {
+	.signin-btn {
 		width: 120px;
 		height: 48px;
 		border-radius: 6px;
@@ -44,7 +44,7 @@
 		text-align: center;
 		cursor: pointer;
 	}
-	:hover.signin_btn {
+	:hover.signin-btn {
 		background-color: rgba(100, 159, 219, 0.1);
 		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 	}
@@ -54,18 +54,18 @@
 		margin-right: 20px !important;
 		margin-bottom: -7px !important;
 
-		.mykloud_logo {
+		.mykloud-logo {
 			background-image: url(../../common/assets/logo-mob.png);
 			background-size: 32px;
 			width: 32.5px;
 			height: 32px;
 		}
 
-		.right_side {
+		.right-side {
 			width: auto;
 		}
 
-		.signin_btn {
+		.signin-btn {
 			height: 20px;
 			appearance: none !important;
 			width: 84px;
@@ -73,11 +73,11 @@
 			border: none;
 			text-align: right !important;
 		}
-		.right_text {
+		.right-text {
 			display: none;
 		}
 
-		.signin_btn:hover {
+		.signin-btn:hover {
 			background-color: #fff !important;
 			color: #1565d8 !important;
 			box-shadow: none !important;

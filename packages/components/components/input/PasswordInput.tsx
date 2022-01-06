@@ -14,7 +14,7 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
     };
     return (
         <Input
-            className="mykmail_login_input"
+            className="mykmail-login-input"
             type={type}
             disabled={disabled}
             // icon={

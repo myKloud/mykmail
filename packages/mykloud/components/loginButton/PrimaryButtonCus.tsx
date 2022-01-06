@@ -4,7 +4,7 @@ import Button, { ButtonProps } from '../../../components/components/button/Butto
 export type PrimaryButtonProps = Omit<ButtonProps, 'color'>;
 
 const PrimaryButton = (props: PrimaryButtonProps, ref: Ref<HTMLButtonElement>) => {
-    return <Button className="mykloud_login_btn" color="norm" ref={ref} {...props} />;
+    return <Button className="mykloud-login-btn" color="norm" ref={ref} {...props} />;
 };
 
 export default forwardRef<HTMLButtonElement, PrimaryButtonProps>(PrimaryButton);

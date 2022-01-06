@@ -7,12 +7,12 @@
 	background-color: #292d45;
 	padding: 5.438rem 4.25rem 4.25rem 5.438rem;
 
-	.first_line {
+	.first-line {
 		height: 49px;
 		display: flex;
 		justify-content: space-between;
 	}
-	.footer_logo {
+	.footer-logo {
 		width: 213px;
 		height: 49px;
 		background-image: url(../../common/assets/footer_logo.png);
@@ -20,7 +20,7 @@
 		background-size: 213px;
 	}
 
-	.link_container {
+	.link-container {
 		height: 24px;
 		font-size: 16px;
 		line-height: 1.75;
@@ -28,16 +28,16 @@
 		  font-weight: 400;
 	}
 
-	.link_container > a {
+	.link-container > a {
 		color: inherit;
 		text-decoration: inherit;
 	}
 
-	.link_container > a:first-child {
+	.link-container > a:first-child {
 		margin-right: 2rem;
 	}
 
-	.second_line {
+	.second-line {
 		height: 36px;
 		display: flex;
 		justify-content: space-between;
@@ -73,20 +73,20 @@
 	.footer {
 		padding: 3.5rem 0 3.5rem 1.75rem !important;
 
-		.first_line {
+		.first-line {
 			display: grid !important;
 			height: auto !important;
 			justify-content: flex-start !important;
 		}
 
-		.footer_logo {
+		.footer-logo {
 			width: 138px !important;
 			height: 35px !important;
 			background-image: url(../../common/assets/footer_logo.png);
 			background-size: 141px;
 		}
 
-		.link_container {
+		.link-container {
 			display: grid !important;
 			height: auto !important;
 			
@@ -97,7 +97,7 @@
 			margin-bottom: 16px !important;
 		}
 
-		.second_line {
+		.second-line {
 			display: grid !important;
 			height: auto !important;
 			margin-top: 24px !important;

@@ -3,13 +3,13 @@ import './header.scss';
 
 const Header = () => {
     return (
-        <div className="header_container">
+        <div className="header-container">
             <div className="left_side">
-                <div className="mykloud_logo" />
+                <div className="mykloud-logo" />
             </div>
-            <div className="right_side">
-                <p className="right_text mr-2">Already have an account?</p>
-                <button className="signin_btn">Register</button>
+            <div className="right-side">
+                <p className="right-text mr-2">Already have an account?</p>
+                <button className="signin-btn">Register</button>
             </div>
         </div>
     );

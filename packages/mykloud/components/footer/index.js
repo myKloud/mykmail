@@ -6,16 +6,16 @@ import linked from '../../common/assets/linkedin.png';
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="first_line">
-                <div className="footer_logo" />
-                <div className="link_container">
+            <div className="first-line">
+                <div className="footer-logo" />
+                <div className="link-container">
                     <a href="https://twitter.com/mykloudplatform" className="mr-8">
                         Terms of Service
                     </a>
                     <a href="https://twitter.com/mykloudplatform">Privacy Policy</a>
                 </div>
             </div>
-            <div className="second_line mt-8">
+            <div className="second-line mt-8">
                 <p className="copyright">Copyright © 2021. All rights reserved by myKloud Company.</p>
 
                 <div className="flex">

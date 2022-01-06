@@ -20,13 +20,13 @@ const ProminentContainer = ({ children, heightClassName, className }: Props) => 
     return (
         <div
             className={classnames([
-                'ui-prominent bg-norm color-norm mykloud_login_container',
+                'ui-prominent bg-norm color-norm mykloud-login-container',
                 heightClassName || 'h100',
                 className,
             ])}
         >
             <Header />
-            <div className="form_container">{children}</div>
+            <div className="form-container">{children}</div>
             <Footer />
         </div>
     );

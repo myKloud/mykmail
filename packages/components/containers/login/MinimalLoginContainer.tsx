@@ -145,7 +145,7 @@ const LoginForm = ({
             )}
             <form
                 name="loginForm"
-                className={challengeLoading ? 'hidden' : 'mykloud_login_form'}
+                className={challengeLoading ? 'hidden' : 'mykloud-login-form'}
                 onSubmit={(event) => {
                     event.preventDefault();
                     const run = async () => {
@@ -174,12 +174,12 @@ const LoginForm = ({
                         }}
                     />
                 )}
-                <h2 className="mykmail_login_title_h2">Login to your account</h2>
-                <p className="mykmail_login_title_p">Enter your username and password</p>
+                <h2 className="mykmail-login-title-h2">Login to your account</h2>
+                <p className="mykmail-login-title-p">Enter your username and password</p>
                 {/* <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label> */}
                 <div className="mb1">
                     <Input
-                        className="mykmail_login_input"
+                        className="mykmail-login-input"
                         type="text"
                         name="login"
                         ref={usernameRef}
