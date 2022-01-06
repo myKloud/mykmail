@@ -13,7 +13,7 @@
     <circle cx="32.1249" cy="10.2187" r="3.14451" fill="#C3C8CC" />
     <path
         d="M17.7 69C17.7 64.9683 20.9683 61.7 25 61.7H161C165.032 61.7 168.3 64.9683 168.3 69V87C168.3 91.0317 165.032 94.3 161 94.3H25C20.9683 94.3 17.7 91.0317 17.7 87V69Z"
-        fill="white" stroke="#EBEDED" stroke-width="1.4" />
+        fill="#fff" stroke="#EBEDED" stroke-width="1.4" />
     <g opacity="0.3" filter="url(#filter0_f)">
         <path
             d="M69 81C69 76.5817 72.5817 73 77 73H110C114.418 73 118 76.5817 118 81V102C118 106.418 114.418 110 110 110H77C72.5817 110 69 106.418 69 102V81Z"
@@ -47,7 +47,7 @@
         </filter>
         <linearGradient id="paint0_linear" x1="93.0496" y1="46.7757" x2="93.0496" y2="136.001"
             gradientUnits="userSpaceOnUse">
-            <stop stop-color="white" />
+            <stop stop-color="#fff" />
             <stop offset="1" stop-color="#FDFEFE" />
         </linearGradient>
         <linearGradient id="paint1_linear" x1="93.0769" y1="57.7754" x2="93.0769" y2="104.155"

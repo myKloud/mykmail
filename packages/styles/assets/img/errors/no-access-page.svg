@@ -11,7 +11,7 @@
   </g>
   <defs>
     <linearGradient id="paint0_linear" x1="92.37" x2="92.37" y1="46.78" y2="136" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white"/>
+      <stop stop-color="#fff"/>
       <stop offset="1" stop-color="#FDFEFE"/>
     </linearGradient>
     <linearGradient id="paint1_linear" x1="91.69" x2="91.69" y1="45.6" y2="105.73" gradientUnits="userSpaceOnUse">
@@ -19,7 +19,7 @@
       <stop offset="1" stop-color="#E63757"/>
     </linearGradient>
     <clipPath id="clip0">
-      <path fill="white" d="M0 0h185v136H0z"/>
+      <path fill="#fff" d="M0 0h185v136H0z"/>
     </clipPath>
   </defs>
 </svg>

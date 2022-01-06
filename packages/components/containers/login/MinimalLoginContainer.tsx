@@ -4,17 +4,15 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
-
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput} from '../../components';
-import PrimaryButton from "../../../mykloud/components/loginButton/PrimaryButtonCus"
+import { FullLoader, Input, Label, LinkButton, PasswordInput } from '../../components';
+import PrimaryButton from '../../../mykloud/components/loginButton/PrimaryButtonCus';
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
-
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
-import "../../../mykloud/components/login/login.scss";
+import '../../../mykloud/components/login/login.scss';
 
 const UnlockForm = ({
     onSubmit,
@@ -53,7 +51,7 @@ const UnlockForm = ({
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
-                <PrimaryButton  type="submit" loading={loading} data-cy-login="submit mailbox password">
+                <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
                     {c('Action').t`Submit`}
                 </PrimaryButton>
             </div>
@@ -146,9 +144,8 @@ const LoginForm = ({
                 </div>
             )}
             <form
-            
                 name="loginForm"
-                className={challengeLoading ? 'hidden' : "mykloud_login_form" }
+                className={challengeLoading ? 'hidden' : 'mykloud_login_form'}
                 onSubmit={(event) => {
                     event.preventDefault();
                     const run = async () => {
@@ -178,7 +175,7 @@ const LoginForm = ({
                     />
                 )}
                 <h2 className="mykmail_login_title_h2">Login to your account</h2>
-	            <p className="mykmail_login_title_p">Enter your username and password</p>
+                <p className="mykmail_login_title_p">Enter your username and password</p>
                 {/* <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label> */}
                 <div className="mb1">
                     <Input
@@ -201,7 +198,6 @@ const LoginForm = ({
                 {/* <Label htmlFor="password">{c('Label').t`Password`}</Label> */}
                 <div className="mb1">
                     <PasswordInput
-                        
                         name="password"
                         autoComplete="current-password"
                         id="password"
