@@ -1,5 +1,8 @@
 import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
+import '../../../mykloud/components/login/login.scss';
+import Header from '../../../mykloud/components/header';
+import Footer from '../../../mykloud/components/footer';
 
 interface Props {
     children?: ReactNode;
@@ -15,8 +18,16 @@ const ProminentContainer = ({ children, heightClassName, className }: Props) => 
     // the view is bigger with empty space after that bar). So pages like that
     // should set h100v class for height instead.
     return (
-        <div className={classnames(['ui-prominent bg-norm color-norm', heightClassName || 'h100', className])}>
-            {children}
+        <div
+            className={classnames([
+                'ui-prominent bg-norm color-norm mykloud-login-container',
+                heightClassName || 'h100',
+                className,
+            ])}
+        >
+            <Header />
+            <div className="form-container">{children}</div>
+            <Footer />
         </div>
     );
 };

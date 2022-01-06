@@ -32,7 +32,7 @@ const EmptyLabels = ({ onFocus }: Props) => {
     return (
         <SidebarListItem>
             <SidebarListItemButton onFocus={onFocus} data-shortcut-target="add-label" onClick={handleClick}>
-                <SidebarListItemContent right={<SidebarListItemContentIcon name="plus" color="white" />}>
+                <SidebarListItemContent right={<SidebarListItemContentIcon name="plus" color="#fff" />}>
                     {c('Link').t`Add label`}
                 </SidebarListItemContent>
             </SidebarListItemButton>

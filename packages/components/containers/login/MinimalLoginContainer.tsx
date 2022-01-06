@@ -4,15 +4,15 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
-
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput, PrimaryButton } from '../../components';
+import { FullLoader, Input, Label, LinkButton, PasswordInput } from '../../components';
+import PrimaryButton from '../../../mykloud/components/loginButton/PrimaryButtonCus';
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
-
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
+import '../../../mykloud/components/login/login.scss';
 
 const UnlockForm = ({
     onSubmit,
@@ -145,7 +145,7 @@ const LoginForm = ({
             )}
             <form
                 name="loginForm"
-                className={challengeLoading ? 'hidden' : undefined}
+                className={challengeLoading ? 'hidden' : 'mykloud-login-form'}
                 onSubmit={(event) => {
                     event.preventDefault();
                     const run = async () => {
@@ -174,9 +174,12 @@ const LoginForm = ({
                         }}
                     />
                 )}
-                <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
+                <h2 className="mykmail-login-title-h2">Login to your account</h2>
+                <p className="mykmail-login-title-p">Enter your username and password</p>
+                {/* <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label> */}
                 <div className="mb1">
                     <Input
+                        className="mykmail-login-input"
                         type="text"
                         name="login"
                         ref={usernameRef}
@@ -192,7 +195,7 @@ const LoginForm = ({
                         data-cy-login="username"
                     />
                 </div>
-                <Label htmlFor="password">{c('Label').t`Password`}</Label>
+                {/* <Label htmlFor="password">{c('Label').t`Password`}</Label> */}
                 <div className="mb1">
                     <PasswordInput
                         name="password"

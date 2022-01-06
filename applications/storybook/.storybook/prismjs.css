@@ -16,7 +16,7 @@ code[class*="language-"],
 pre[class*="language-"] {
   width: 100% !important;
   color: black !important;
-  text-shadow: 0 1px white !important;
+  text-shadow: 0 1px #fff !important;
   font-family: Consolas, Monaco, monospace !important;
   text-align: left !important;
   /*white-space: pre !important;*/

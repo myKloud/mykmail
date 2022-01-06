@@ -1,0 +1,118 @@
+@import '../../common/style/fonts.scss';
+@import '../../common/style/variables.scss';
+
+.mykloud-login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-image: url(../../common/assets/background.png) !important;
+	background-repeat: no-repeat;
+	background-color: transparent !important;
+	background-size: cover !important;
+	font-family: 'Poppins' !important;
+	overflow: auto;
+}
+
+.mykloud-login-form {
+	width: 95%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 4rem 6rem 4rem 6rem;
+	background-color: #fff;
+	margin: 30px auto;
+	border: 1px solid #a0a0a5b2;
+	border-radius: 6px;
+}
+
+.mykmail-login-title-h2 {
+	margin: 0;
+	align-self: center;
+	z-index: 10;
+	color: #1b1616;
+	font-size: 32px;
+	font-weight: 900 !important;
+}
+
+.mykmail-login-title-p {
+	margin: 0;
+	margin-bottom: 5%;
+	align-self: center;
+	z-index: 10;
+	font-size: 18px;
+	line-height: 1.56;
+	color: #45536c;
+}
+
+.mykmail-login-input {
+	width: 100% !important;
+	height: 56px !important;
+	padding: 0 16px !important;
+	border-radius: 6px !important;
+	border: 1px solid #dcdce7 !important;
+	background-color: #fff !important;
+	font-family: 'Open Sans' !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	color: #1b1616 !important;
+	outline: none !important;
+}
+
+.mykmail-login-input:focus:focus-within {
+	border: 1px solid #445da7 !important;
+}
+
+.mykloud-login-btn {
+	height: 64px !important;
+	width: 100% !important;
+	border: none !important;
+	border-radius: 6px !important;
+	background-color: #1b73d1 !important;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	text-align: center !important;
+	color: #fff !important;
+}
+
+@media screen and (max-width: 767px) {
+	.mykloud-login-container {
+		justify-content: space-between;
+	}
+	
+	.mykloud-login-form{
+		width: auto;
+		max-width: 600px;
+		position: relative;
+		padding: 2rem 0;
+		background-color: rgba(255, 255, 255, 0);
+		margin: 0 20px !important;
+		border: none !important;
+	}
+
+	.mykmail-login-title-h2 {
+		align-self: flex-start;
+		z-index: 10;
+		color: #1b1616;
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	.mykmail-login-title-p {
+		align-self: flex-start;
+		z-index: 10;
+		font-size: 15px;
+		line-height: 1.56;
+		color: #45536c;
+	}
+
+	.mykloud-login-btn {
+		height: 7vh !important;
+	}
+
+	.mykmail-login-input {
+		height: 6vh !important;
+	}
+}
+
+

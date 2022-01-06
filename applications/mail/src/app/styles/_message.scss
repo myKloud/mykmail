@@ -231,7 +231,7 @@
 	// transition-property: background-color, color;
 	// force color until real dark mode
 	&:not(.plain) {
-		background: white;
+		background: #fff;
 		color: #262a33;
 	}
 	// as mail content is forced on white bg, button has to be forced as well
