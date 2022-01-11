@@ -1,11 +1,8 @@
-@import '../../common/style/fonts.scss';
-@import '../../common/style/variables.scss';
-
 .mykloud-login-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-image: url(../../common/assets/background.png) !important;
+	background-image: url(../../assets/img/mykloud/background.png) !important;
 	background-repeat: no-repeat;
 	background-color: transparent !important;
 	background-size: cover !important;
@@ -79,8 +76,8 @@
 	.mykloud-login-container {
 		justify-content: space-between;
 	}
-	
-	.mykloud-login-form{
+
+	.mykloud-login-form {
 		width: auto;
 		max-width: 600px;
 		position: relative;
@@ -114,5 +111,3 @@
 		height: 6vh !important;
 	}
 }
-
-

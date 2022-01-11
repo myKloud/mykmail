@@ -1,7 +1,6 @@
 import React from 'react';
-import './footer.scss';
-import twitter from '../../common/assets/twitter.png';
-import linked from '../../common/assets/linkedin.png';
+import twitter from '../../../styles/assets/img/mykloud/twitter.png';
+import linked from '../../../styles/assets/img/mykloud/linkedin.png';
 
 const Footer = () => {
     return (

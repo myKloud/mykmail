@@ -1,6 +1,3 @@
-@import '../../common/style/fonts.scss';
-@import '../../common/style/variables.scss';
-
 .header-container {
 	display: flex;
 	justify-content: space-between;
@@ -12,7 +9,7 @@
 	.mykloud-logo {
 		width: 150px;
 		height: 54px;
-		background-image: url(../../common/assets/mykloud_logo.png);
+		background-image: url(../../assets/img/mykloud/mykloud_logo.png);
 		background-repeat: no-repeat;
 		background-size: 150px;
 		cursor: pointer;
@@ -55,7 +52,7 @@
 		margin-bottom: -7px !important;
 
 		.mykloud-logo {
-			background-image: url(../../common/assets/logo-mob.png);
+			background-image: url(../../assets/img/mykloud/logo-mob.png);
 			background-size: 32px;
 			width: 32.5px;
 			height: 32px;

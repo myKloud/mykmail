@@ -12,7 +12,6 @@ import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, Chall
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
-import '../../../mykloud/components/login/login.scss';
 
 const UnlockForm = ({
     onSubmit,
