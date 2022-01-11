@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 
-import Header from '../../../mykloud/components/header';
-import Footer from '../../../mykloud/components/footer';
+import {Header, Footer} from "../../components/mykloud"
 
 interface Props {
     children?: ReactNode;

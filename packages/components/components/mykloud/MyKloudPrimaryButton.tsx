@@ -1,5 +1,5 @@
 import { forwardRef, Ref } from 'react';
-import Button, { ButtonProps } from './Button';
+import Button, { ButtonProps } from '../button/Button';
 
 export type PrimaryButtonProps = Omit<ButtonProps, 'color'>;
 

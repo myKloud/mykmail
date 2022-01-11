@@ -5,7 +5,8 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput, MyKloudPrimaryButton } from '../../components';
+import { FullLoader, Input, Label, LinkButton, PasswordInput } from '../../components';
+import {MyKloudPrimaryButton} from "../../components/mykloud"
 
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
