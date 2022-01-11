@@ -7,6 +7,7 @@ export { default as ErrorButton } from './ErrorButton';
 export { default as FloatingButton } from './FloatingButton';
 export { default as InlineLinkButton } from './InlineLinkButton';
 export { default as PrimaryButton } from './PrimaryButton';
+export { default as MyKloudPrimaryButton } from './MyKloudPrimaryButton';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as LinkButton } from './LinkButton';
 export { default as FileButton } from './FileButton';

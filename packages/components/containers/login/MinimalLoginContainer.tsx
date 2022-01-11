@@ -5,8 +5,8 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput } from '../../components';
-import PrimaryButton from '../../../mykloud/components/loginButton/PrimaryButtonCus';
+import { FullLoader, Input, Label, LinkButton, PasswordInput, MyKloudPrimaryButton } from '../../components';
+
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 import AbuseModal from './AbuseModal';
@@ -50,9 +50,9 @@ const UnlockForm = ({
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
-                <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
+                <MyKloudPrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </MyKloudPrimaryButton>
             </div>
         </form>
     );
@@ -96,9 +96,9 @@ const TOTPForm = ({
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
-                <PrimaryButton type="submit" disabled={totp.length < 6} loading={loading} data-cy-login="submit TOTP">
+                <MyKloudPrimaryButton type="submit" disabled={totp.length < 6} loading={loading} data-cy-login="submit TOTP">
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </MyKloudPrimaryButton>
             </div>
         </form>
     );
@@ -209,9 +209,9 @@ const LoginForm = ({
                 </div>
                 <div className="flex flex-justify-space-between">
                     {needHelp}
-                    <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
+                    <MyKloudPrimaryButton type="submit" loading={loading} data-cy-login="submit">
                         {c('Action').t`Log in`}
-                    </PrimaryButton>
+                    </MyKloudPrimaryButton>
                 </div>
                 {footer}
             </form>
