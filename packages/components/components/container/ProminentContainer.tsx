@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { classnames } from '../../helpers';
 import '../../../mykloud/components/login/login.scss';
 // import Header from '../../../mykloud/components/header';
-import Footer from '../../../mykloud/components/footer';
+// import Footer from '../../../mykloud/components/footer';
 
 interface Props {
     children?: ReactNode;
@@ -27,7 +27,7 @@ const ProminentContainer = ({ children, heightClassName, className }: Props) => 
         >
             {/* <Header /> */}
             <div className="form-container">{children}</div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
