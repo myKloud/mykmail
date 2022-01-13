@@ -11,14 +11,14 @@ import { BCRYPT_PREFIX } from './constants';
  * @returns {Promise<String>}
  */
 export const computeKeyPassword = async (password, salt) => {
-    debugger
+    // debugger
     if (!password || !salt || salt.length !== 24 || password.length < 1) {
         throw new Error('Password and salt required.');
     }
     const saltBinary = binaryStringToArray(decodeBase64(salt));
-    debugger
+    // debugger
     const hash = await bcrypt.hash(password, BCRYPT_PREFIX + bcrypt.encodeBase64(saltBinary, 16));
-    debugger
+    // debugger
     // Remove bcrypt prefix and salt (first 29 characters)
     return hash.slice(29);
 };

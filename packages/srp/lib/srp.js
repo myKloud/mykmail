@@ -7,7 +7,7 @@ import { fromBN, toBN } from './utils/bigNumber';
 import { checkUsername } from './utils/username';
 import { verifyAndGetModulus } from './utils/modulus';
 import { AUTH_VERSION, SRP_LEN, MAX_VALUE_ITERATIONS } from './constants';
-import {InfoCredentials} from "../../mykloud/srp";
+import { InfoCredentials } from '../../mykloud/srp';
 
 const ZERO_BN = BigNumber.fromNumber(0);
 const ONE_BN = BigNumber.fromNumber(1);
@@ -110,70 +110,63 @@ const getParameters = async ({ len, generator, modulus, serverEphemeralArray }) 
  * @return {Promise}
  */
 export const generateProofs = async ({ len, modulusArray, hashedPasswordArray, serverEphemeralArray }) => {
-    
     const modulusBn = toBN(modulusArray);
     if (modulusBn.bitLength !== len) {
-        
         throw new Error('SRP modulus has incorrect size');
     }
-    
+
     const generator = TWO_BN;
-    
+
     const hashedArray = await srpHasher(concatArrays([fromBN(len, generator), modulusArray]));
-    
+
     const multiplierBn = toBN(hashedArray);
-    
+
     const serverEphemeral = toBN(serverEphemeralArray);
-    
+
     const hashedPassword = toBN(hashedPasswordArray);
-    
+
     const modulus = new Modulus(modulusBn);
-    
+
     const modulusMinusOne = modulus.subtract(ONE_BN);
-    
+
     const multiplierReduced = modulus.reduce(multiplierBn);
-    
+
     if (multiplierReduced.compare(ONE_BN) <= 0 || multiplierReduced.compare(modulusMinusOne) >= 0) {
         throw new Error('SRP multiplier is out of bounds');
     }
-    
+
     if (generator.compare(ONE_BN) <= 0 || generator.compare(modulusMinusOne) >= 0) {
         throw new Error('SRP generator is out of bounds');
     }
-    
+
     // if (serverEphemeral.compare(ONE_BN) <= 0 || serverEphemeral.compare(modulusMinusOne) >= 0) {
     //     throw new Error('SRP server ephemeral is out of bounds');
     // }
-    
+
     const { clientSecret, clientEphemeral, scramblingParam } = await getParameters({
         len,
         generator,
         modulus,
         serverEphemeralArray,
     });
-    
+
     let subtracted = serverEphemeral.subtract(
         modulus.reduce(modulus.power(generator, hashedPassword).multiply(multiplierReduced))
     );
-    
+
     if (subtracted.compare(ZERO_BN) < 0) {
         subtracted = subtracted.add(modulus);
     }
-    
+
     const exponent = scramblingParam.multiply(hashedPassword).add(clientSecret).divide(modulusMinusOne).remainder;
-    
+
     const sharedSession = modulus.power(subtracted, exponent);
-    
+
     const clientEphemeralArray = fromBN(len, clientEphemeral);
     const sharedSessionArray = fromBN(len, sharedSession);
-    
+
     const clientProof = await srpHasher(concatArrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray]));
     const expectedServerProof = await srpHasher(concatArrays([clientEphemeralArray, clientProof, sharedSessionArray]));
-    
-
-
-
-
 
     return {
         clientEphemeral: clientEphemeralArray,
@@ -204,12 +197,11 @@ export const getSrp = async (
     if (!checkUsername(authVersion, username, Username)) {
         throw new Error('Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).');
     }
-    
 
     const modulusArray = await verifyAndGetModulus(serverModulus);
-    
+
     const serverEphemeralArray = binaryStringToArray(decodeBase64(ServerEphemeral));
-    
+
     const hashedPasswordArray = await hashPassword({
         version: authVersion,
         password,
@@ -217,7 +209,6 @@ export const getSrp = async (
         username: authVersion < 3 ? Username : undefined,
         modulus: modulusArray,
     });
-    
 
     const { clientEphemeral, clientProof, expectedServerProof, sharedSession } = await generateProofs({
         len: SRP_LEN,
@@ -225,17 +216,14 @@ export const getSrp = async (
         hashedPasswordArray,
         serverEphemeralArray,
     });
-    debugger
-    //ffffffffffffffffffffffffffffffffffffffffffffffff
-     const ourInfo = await InfoCredentials(ServerEphemeral,Salt,username,password)
-     debugger
 
-
-
+    // debugger
+    const credentialsInfo = await InfoCredentials(ServerEphemeral, Salt, username, password);
+    //  debugger
 
     return {
-        clientEphemeral: ourInfo.clientEphemeral ,
-        clientProof: ourInfo.clientProof,
+        clientEphemeral: credentialsInfo.clientEphemeral,
+        clientProof: credentialsInfo.clientProof,
         expectedServerProof: encodeBase64(arrayToBinaryString(expectedServerProof)),
         sharedSession,
     };
