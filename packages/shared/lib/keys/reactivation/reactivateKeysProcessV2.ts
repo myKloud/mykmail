@@ -285,7 +285,7 @@ const reactivateKeysProcessV2 = async ({
             if (!address || !primaryPrivateUserKey) {
                 throw new Error('Missing dependency');
             }
-
+            // debugger
             const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
             const activeAddressKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
 

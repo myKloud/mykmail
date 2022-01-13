@@ -265,6 +265,7 @@ export const upgradeV2KeysHelper = async ({
 
     const addressesKeys = await Promise.all(
         addresses.map(async (address) => {
+            // debugger
             return {
                 address,
                 keys: await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword),

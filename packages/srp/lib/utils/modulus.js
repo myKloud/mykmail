@@ -56,7 +56,10 @@ export const verifyModulus = async (keys, modulus) => {
  * @returns {Promise<Uint8Array>}
  */
 export const verifyAndGetModulus = async (modulus) => {
+    debugger
     const [publicKeys, modulusParsed] = await Promise.all([getModulusKeys(), getCleartextMessage(modulus)]);
+    debugger
     await verifyModulus(publicKeys, modulusParsed);
+    debugger
     return binaryStringToArray(decodeBase64(modulusParsed.getText()));
 };

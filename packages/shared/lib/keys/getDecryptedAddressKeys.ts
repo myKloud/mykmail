@@ -20,7 +20,7 @@ const getAddressKeyPassword = (
     if (!organizationKey && Activation) {
         return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
     }
-
+    //  debugger
     if (Token) {
         return getAddressKeyToken({
             Token,
@@ -29,12 +29,15 @@ const getAddressKeyPassword = (
             privateKeys: userKeys.privateKeys,
             publicKeys: userKeys.publicKeys,
         });
+        
     }
+    // debugger
 
     return Promise.resolve(keyPassword);
 };
 
 const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassword: string) => {
+    // debugger
     const privateKey = await decryptPrivateKey(PrivateKey, addressKeyPassword);
     return {
         ID,
@@ -44,28 +47,30 @@ const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassw
 };
 
 export const getDecryptedAddressKeys = async (
+    
     addressKeys: tsKey[] = [],
     userKeys: KeyPair[] = [],
     keyPassword: string,
     organizationKey?: KeyPair
 ): Promise<DecryptedKey[]> => {
+    // debugger
     if (!addressKeys.length || !userKeys.length) {
         return [];
     }
-
+    // debugger
     const userKeysPair = splitKeys(userKeys);
-
+    // debugger
     const [primaryKey, ...restKeys] = addressKeys;
-
+    // debugger
     const primaryKeyResult = await getAddressKeyPassword(primaryKey, userKeysPair, keyPassword, organizationKey)
-        .then((password) => getDecryptedAddressKey(primaryKey, password))
+        .then((password) =>   getDecryptedAddressKey(primaryKey, password))
         .catch(noop);
-
+    // debugger
     // In case the primary key fails to decrypt, something is broken, so don't even try to decrypt the rest of the keys.
     if (!primaryKeyResult) {
         return [];
     }
-
+    // debugger
     const restKeyResults = await Promise.all(
         restKeys.map((restKey) => {
             return getAddressKeyPassword(restKey, userKeysPair, keyPassword, organizationKey)
@@ -73,7 +78,7 @@ export const getDecryptedAddressKeys = async (
                 .catch(noop);
         })
     );
-
+    // debugger
     return [primaryKeyResult, ...restKeyResults].filter(isTruthy);
 };
 export const getDecryptedAddressKeysHelper = async (

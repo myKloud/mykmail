@@ -8,6 +8,7 @@ import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { getHasTOTPEnabled, getHasU2FEnabled } from '@proton/shared/lib/settings/twoFactor';
 
 export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse) => {
+    debugger
     return {
         hasTotp: getHasTOTPEnabled(Enabled),
         hasU2F: getHasU2FEnabled(Enabled),
@@ -16,15 +17,18 @@ export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse)
 };
 
 export const handleUnlockKey = async (User: tsUser, KeySalts: tsKeySalt[], rawKeyPassword: string) => {
+    debugger
     const { KeySalt, PrivateKey } = getPrimaryKeyWithSalt(User.Keys, KeySalts);
-
+    debugger
     if (!PrivateKey) {
         throw new Error('Missing private key');
     }
 
     // Support for versions without a key salt.
     const keyPassword = KeySalt ? ((await computeKeyPassword(rawKeyPassword, KeySalt)) as string) : rawKeyPassword;
+    debugger
     const primaryKey = await decryptPrivateKey(PrivateKey, keyPassword);
+    debugger
 
     return { primaryKey, keyPassword };
 };

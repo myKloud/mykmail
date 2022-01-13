@@ -39,7 +39,7 @@ export const getReactivatedAddressKeys = async ({
         reactivatedKeys: undefined,
         signedKeyList: undefined,
     } as const;
-
+//    debugger
     const oldDecryptedAddressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, oldUserKeys, keyPassword);
 
     // All keys were able to decrypt previously, can just return.

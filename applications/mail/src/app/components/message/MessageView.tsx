@@ -96,6 +96,7 @@ const MessageView = (
     const elementRef = useRef<HTMLElement>(null);
 
     const { message, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
+    console.log(message)
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(message.localID, labelID);
     const verify = useVerifyMessage(message.localID);
@@ -353,6 +354,7 @@ const MessageView = (
                         highlightKeywords={highlightKeywords}
                         parentMessageRef={elementRef}
                     />
+                    {console.log(message)}
                     <MessageBody
                         messageLoaded={messageLoaded}
                         bodyLoaded={bodyLoaded}

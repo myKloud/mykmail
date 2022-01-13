@@ -44,40 +44,41 @@ interface UseConversation {
 }
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
+    // debugger
     const dispatch = useDispatch();
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();
-
+    // debugger
     const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
-
+    // debugger
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
             return conversationState;
         }
-
+        // debugger
         const [conversationFromElementsState] = getElementsFromIDs([conversationID]);
-
+        // debugger
         const newConversationState: ConversationState = {
             Conversation: { ID: conversationID },
             Messages: undefined,
             loadRetry: 0,
             errors: {},
         };
-
+        // debugger
         if (conversationFromElementsState) {
             newConversationState.Conversation = conversationFromElementsState;
         }
 
         dispatch(initialize(newConversationState));
-
+        // debugger
         return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
     };
 
     const [conversationID, setConversationID] = useState(inputConversationID);
     const [pendingRequest, setPendingRequest] = useState(false);
     const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
-
+    // debugger
     const load = async (conversationID: string, messageID: string | undefined) => {
         const existingConversation = getConversation(conversationID);
         if ((existingConversation?.loadRetry || 0) > LOAD_RETRY_COUNT) {
@@ -88,9 +89,10 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             // Conversation not exist or invalid id, retrying will not help, aborting
             return;
         }
-
+        // debugger
         setPendingRequest(true);
         (await dispatch(loadAction({ api, conversationID, messageID }))) as any as Promise<any>;
+        // debugger
 
         const updatedConversation = getConversation(conversationID);
         if (

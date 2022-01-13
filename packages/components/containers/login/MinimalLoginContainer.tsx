@@ -240,6 +240,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const handleResult = (result: AuthActionResponse) => {
+        debugger
         if (result.to === AuthStep.DONE) {
             return onLogin(result.session);
         }
@@ -279,6 +280,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                 footer={footer}
                 hasChallenge={hasChallenge}
                 onSubmit={(username, password, payload) => {
+                    debugger
                     return handleLogin({
                         username,
                         password,
@@ -327,6 +329,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
             <UnlockForm
                 cancelButton={cancelButton}
                 onSubmit={(keyPassword) => {
+                    debugger
                     return handleUnlock({
                         cache,
                         clearKeyPassword: keyPassword,

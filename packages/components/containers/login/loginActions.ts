@@ -200,22 +200,23 @@ export const handleUnlock = async ({
     clearKeyPassword: string;
     isOnePasswordMode: boolean;
 }) => {
+    debugger
     const { userSaltResult, loginPassword } = cache;
     if (!userSaltResult) {
         throw new Error('Invalid state');
     }
-
+    debugger
     const [User, KeySalts] = userSaltResult;
-
+    debugger
     await wait(500);
-
+    debugger
     const result = await handleUnlockKey(User, KeySalts, clearKeyPassword).catch(() => undefined);
     if (!result) {
         const error = new Error(c('Error').t`Incorrect mailbox password. Please try again`);
         error.name = 'PasswordError';
         throw error;
     }
-
+    debugger
     return handleKeyUpgrade({
         cache,
         loginPassword,
@@ -252,6 +253,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
+    debugger
     const { hasTotp, hasUnlock, hasU2F, authApi, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN && hasTotp) {
@@ -283,7 +285,10 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
         ]);
     }
 
+    debugger
+
     const [User] = cache.userSaltResult;
+    debugger
 
     if (User.Keys.length === 0) {
         if (hasGenerateKeys) {
@@ -299,8 +304,10 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
                 }
                 // If the member is the super owner, then fall through to the automatic setup
             }
+            debugger
             return handleSetupPassword({ cache, newPassword: loginPassword });
         }
+        debugger
         return finalizeLogin({ cache, loginPassword, user: User });
     }
 
@@ -310,7 +317,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
             to: AuthStep.UNLOCK,
         };
     }
-
+    debugger
     return handleUnlock({ cache, clearKeyPassword: loginPassword, isOnePasswordMode: true });
 };
 
@@ -358,15 +365,22 @@ export const handleLogin = async ({
     keyMigrationFeatureValue: number;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
+    debugger
     const infoResult = await api<InfoResponse>(getInfo(username));
+    debugger
     const { authVersion, result: authResult } = await loginWithFallback({
         api,
         credentials: { username, password },
         initialAuthInfo: infoResult,
         payload,
     });
+    debugger
     const { UID, AccessToken } = authResult;
+    debugger
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+    debugger
+    const t = {...getAuthTypes(authResult)};
+    debugger
 
     const cache: AuthCacheResult = {
         authResult,
@@ -380,6 +394,7 @@ export const handleLogin = async ({
         hasGenerateKeys,
         keyMigrationFeatureValue,
     };
+    debugger
 
     return next({ cache, from: AuthStep.LOGIN });
 };

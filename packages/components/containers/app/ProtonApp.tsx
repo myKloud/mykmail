@@ -132,7 +132,9 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             path,
         }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
+            debugger
             authentication.setPassword(keyPassword);
+            debugger
             if (newLocalID !== undefined) {
                 authentication.setLocalID(newLocalID);
             }
@@ -225,7 +227,9 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     const { UID, localID, history, isLoggingOut, consumerLogoutPromise } = authData;
 
     const authenticationValue = useMemo(() => {
+        debugger
         if (!UID) {
+            debugger
             return {
                 login: handleLogin,
             };

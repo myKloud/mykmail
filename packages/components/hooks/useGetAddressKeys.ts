@@ -25,6 +25,7 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<DecryptedKey[]>
             if (!address) {
                 return [];
             }
+            debugger
             return getDecryptedAddressKeysHelper(address.Keys, user, userKeys, authentication.getPassword());
         },
         [getUser, getAddresses, getUserKeys]

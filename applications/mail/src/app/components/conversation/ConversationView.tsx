@@ -75,9 +75,10 @@ const ConversationView = ({
     const onMailTo = useOnMailTo();
 
     useLinkHandler(wrapperRef, onMailTo);
-
+    
     const { Conversation: conversation, Messages: inputMessages = [] } = conversationState || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
+    
 
     const inTrash = labelID === TRASH;
     const filteredMessages = messages.filter(
@@ -159,7 +160,9 @@ const ConversationView = ({
                     {showTrashWarning && (
                         <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
                     )}
+                    {console.log(messagesToShow)}
                     {messagesToShow.map((message, index) => (
+                        
                         <MessageView
                             key={message.ID}
                             ref={(ref) => {

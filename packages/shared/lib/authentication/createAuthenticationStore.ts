@@ -16,13 +16,17 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
             set(MAILBOX_PASSWORD_KEY, password);
             return;
         }
-        set(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(password));
+        const o = encodeUtf8Base64(password)
+        debugger
+        set(MAILBOX_PASSWORD_KEY, o);
     };
     const getPassword = () => {
+        debugger
         const value = get(MAILBOX_PASSWORD_KEY);
         if (value === undefined) {
             return '';
         }
+        debugger
         return decodeUtf8Base64(value);
     };
 

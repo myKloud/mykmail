@@ -15,6 +15,7 @@ interface Arguments {
     payload?: any;
 }
 const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }: Arguments) => {
+    debugger
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
         lastAuthVersion: undefined,

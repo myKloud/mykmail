@@ -75,6 +75,7 @@ const getConfig = (env) => {
         plugins: getPlugins(options),
         optimization: getOptimizations(options),
         devServer: {
+            
             hot: !options.isProduction,
             devMiddleware: {
                 stats: 'minimal',
@@ -109,6 +110,7 @@ const getConfig = (env) => {
                     },
                 },
             }),
+            
         },
     };
 };

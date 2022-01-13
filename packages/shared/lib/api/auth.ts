@@ -104,7 +104,7 @@ export const getLocalSessions = () => ({
     method: 'get',
     url: `auth/sessions/local`,
 });
-
+// http://localhost:5000/api/auth/info
 export const getInfo = (Username?: string) => ({
     method: 'post',
     url: 'auth/info',

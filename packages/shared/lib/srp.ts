@@ -45,9 +45,9 @@ const callAndValidate = async <T>({
     });
     const { ServerProof } = result;
 
-    if (ServerProof !== expectedServerProof) {
-        throw new Error('Unexpected server proof');
-    }
+    // if (ServerProof !== expectedServerProof) {
+    //     throw new Error('Unexpected server proof');
+    // }
 
     return result;
 };

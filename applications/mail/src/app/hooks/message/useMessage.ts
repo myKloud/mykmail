@@ -29,14 +29,16 @@ interface UseMessage {
 }
 
 export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
+    // debugger
     const dispatch = useDispatch();
     const getLocalID = useGetLocalID();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessage = useGetMessage();
     const getConversationFromState = useGetConversation();
+    // debugger
 
     const messageState = useSelector((state: RootState) => messageByID(state, { ID: inputLocalID }));
-
+    // debugger
     const initMessage = () => {
         const localID = getLocalID(inputLocalID);
 
@@ -56,12 +58,14 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
         const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
 
         dispatch(initialize(message));
+        // debugger
         return message;
     };
 
     // Main subject of the hook
     // Will be updated based on an effect listening on the event manager
     const [message, setMessage] = useState<MessageState>(initMessage);
+    // debugger
 
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {

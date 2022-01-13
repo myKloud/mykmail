@@ -72,9 +72,9 @@ const ENV_CONFIG = Object.keys(APP_CONFIG_JSON).reduce(
     },
     { api: {}, secure: {}, app: {} }
 );
-
+// https://mail.protonmail.com  http://localhost:5000
 const API_TARGETS = {
-    prod: 'https://mail.protonmail.com',
+    prod: 'http://localhost:5000',
     localhost: 'https://localhost',
     proxy: '/api',
     ...ENV_CONFIG.api,

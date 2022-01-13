@@ -182,6 +182,7 @@ export async function migrateAddressKeys({
 
     const addressesKeys = await Promise.all(
         addresses.map(async (address) => {
+            // debugger
             return {
                 address,
                 keys: await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword),
@@ -265,8 +266,10 @@ export async function migrateMemberAddressKeys({
         }
 
         const memberAddressesKeys = (
+            
             await Promise.all(
                 memberAddresses.map(async (address) => {
+                    // debugger
                     const result = {
                         address,
                         keys: await getDecryptedAddressKeys(
