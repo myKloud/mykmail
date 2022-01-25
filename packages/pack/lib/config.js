@@ -72,9 +72,11 @@ const ENV_CONFIG = Object.keys(APP_CONFIG_JSON).reduce(
     },
     { api: {}, secure: {}, app: {} }
 );
-// https://mail.protonmail.com  http://localhost:5000
+// https://mail.protonmail.com
+// http://localhost:5000
+// http://apicors-env-3.eba-4pidqpxf.us-east-2.elasticbeanstalk.com
 const API_TARGETS = {
-    prod: 'http://localhost:5000',
+    prod: 'https://mail.protonmail.com',
     localhost: 'https://localhost',
     proxy: '/api',
     ...ENV_CONFIG.api,
