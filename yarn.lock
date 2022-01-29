@@ -3609,6 +3609,8 @@ __metadata:
     babel-plugin-transform-require-context: ^0.1.1
     card-validator: ^6.1.0
     codemirror: ^5.46.0
+    crypto-browserify: 3.12.0
+    crypto-random-string: ^3.3.0
     date-fns: ^2.0.0
     dompurify: ^2.3.3
     eslint: ^7.9.0
@@ -3632,7 +3634,9 @@ __metadata:
     react-test-renderer: ^17.0.0
     react-virtualized: ^9.21.2
     resize-observer: ^1.0.3
+    secure-remote-password: ^0.3.1
     squire-rte: "github:ProtonMail/Squire#proton-v4"
+    stream: ^0.0.2
     tabbable: ^5.1.3
     thinbus-srp: ^1.6.0
     tinycolor2: ^1.4.1
@@ -7810,6 +7814,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"array-buffer-to-hex@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "array-buffer-to-hex@npm:1.0.0"
+  checksum: 8de16fbb42fc79c839e5579e3e7dbf9a36dfa52cfcb4c0576a0e9cc6eeb5bf3f066b671858a292c97fcf9bd117c6eebc121085325e836dfb62b2737babd29264
+  languageName: node
+  linkType: hard
+
 "array-find-index@npm:^1.0.1":
   version: 1.0.2
   resolution: "array-find-index@npm:1.0.2"
@@ -11779,7 +11790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-browserify@npm:^3.0.0, crypto-browserify@npm:^3.11.0":
+"crypto-browserify@npm:3.12.0, crypto-browserify@npm:^3.0.0, crypto-browserify@npm:^3.11.0":
   version: 3.12.0
   resolution: "crypto-browserify@npm:3.12.0"
   dependencies:
@@ -11798,10 +11809,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-digest-sync@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "crypto-digest-sync@npm:1.0.0"
+  checksum: e1ff0c44a031b14dc22bbefd49df4e57f23e22e79a73284ae612125a08b180d4548f05d2707dc9b83db28e8207536f9296e3d31e6e89316b7de534add074a5df
+  languageName: node
+  linkType: hard
+
 "crypto-js@npm:^3.1.9-1":
   version: 3.3.0
   resolution: "crypto-js@npm:3.3.0"
   checksum: 193923143a4784b2f974366068d96fe8280168fd3fef2bfea9551a5c3e32096f5a8fa49ff4eeb5bd0b9716d325618d38cfbe6125e359a4ef488fbca93e600824
+  languageName: node
+  linkType: hard
+
+"crypto-random-hex@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "crypto-random-hex@npm:1.0.0"
+  dependencies:
+    array-buffer-to-hex: ^1.0.0
+  checksum: d58717aa9d5d159fc886cfcd08eabe585d763ce4c926826a8583604d29cc11b3303950f4eb04fce8c44a12d34f00766f3f90a32a1828256eb25043ca920910b4
   languageName: node
   linkType: hard
 
@@ -11816,6 +11843,15 @@ __metadata:
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
   checksum: 0283879f55e7c16fdceacc181f87a0a65c53bc16ffe1d58b9d19a6277adcd71900d02bb2c4843dd55e78c51e30e89b0fec618a7f170ebcc95b33182c28f05fd6
+  languageName: node
+  linkType: hard
+
+"crypto-random-string@npm:^3.3.0":
+  version: 3.3.1
+  resolution: "crypto-random-string@npm:3.3.1"
+  dependencies:
+    type-fest: ^0.8.1
+  checksum: b959eca35fbd22f3e4775d0daade5cad1a902055d6e3d37840d6bf50440fb6d68a3b90968dedd6a9de2bd3d1e9117cf9e11c1e23fc2abda9950627bb124a5a26
   languageName: node
   linkType: hard
 
@@ -13336,6 +13372,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"emitter-component@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "emitter-component@npm:1.1.1"
+  checksum: 10e907f507a8c16a318e07595119e58b5c3267528d4e3b962ee9b14fd83c97599e7931ccb983ec551a8de8116955c1d6ae7d213c5b0c920b62c02b7cb8d7a4d7
+  languageName: node
+  linkType: hard
+
 "emittery@npm:^0.8.1":
   version: 0.8.1
   resolution: "emittery@npm:0.8.1"
@@ -13396,6 +13439,13 @@ __metadata:
   version: 2.0.0
   resolution: "enabled@npm:2.0.0"
   checksum: 9d256d89f4e8a46ff988c6a79b22fa814b4ffd82826c4fdacd9b42e9b9465709d3b748866d0ab4d442dfc6002d81de7f7b384146ccd1681f6a7f868d2acca063
+  languageName: node
+  linkType: hard
+
+"encode-utf8@npm:^1.0.1":
+  version: 1.0.3
+  resolution: "encode-utf8@npm:1.0.3"
+  checksum: 550224bf2a104b1d355458c8a82e9b4ea07f9fc78387bc3a49c151b940ad26473de8dc9e121eefc4e84561cb0b46de1e4cd2bc766f72ee145e9ea9541482817f
   languageName: node
   linkType: hard
 
@@ -16381,6 +16431,13 @@ fsevents@^1.2.7:
   version: 1.1.0
   resolution: "hex-color-regex@npm:1.1.0"
   checksum: 44fa1b7a26d745012f3bfeeab8015f60514f72d2fcf10dce33068352456b8d71a2e6bc5a17f933ab470da2c5ab1e3e04b05caf3fefe3c1cabd7e02e516fc8784
+  languageName: node
+  linkType: hard
+
+"hex-to-array-buffer@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "hex-to-array-buffer@npm:1.1.0"
+  checksum: 2c1dd006f9c9910bfe2893d7ab746e2455bab452d3f513464b2704787c72a1df0245a1d0ebd643378fec2d84f0099e26405479af7827fd41b274fac07cb9a291
   languageName: node
   linkType: hard
 
@@ -22543,6 +22600,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"pad-start@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "pad-start@npm:1.0.2"
+  checksum: 66847280d7a62459ced8361e6c7bf91285771154743f702d4acc86ed014f38ba2ea183a193f70374529dbd3569c6238d15e8a9e3a5dbea5009346ff9a9508907
+  languageName: node
+  linkType: hard
+
 "pako@npm:^1.0.11, pako@npm:^1.0.5, pako@npm:~1.0.2, pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -26414,6 +26478,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"secure-remote-password@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "secure-remote-password@npm:0.3.1"
+  dependencies:
+    array-buffer-to-hex: ^1.0.0
+    crypto-digest-sync: ^1.0.0
+    crypto-random-hex: ^1.0.0
+    encode-utf8: ^1.0.1
+    hex-to-array-buffer: ^1.1.0
+    jsbn: ^1.1.0
+    pad-start: ^1.0.2
+  checksum: ac6ccd360fb3ea4ada0bc9f1303cf8be165de0ea462e3c3859ae2722fbf065b42c549c642f94ec4ef32c8b68a9a846a142043c98a2dd4f4c429a6841dff365a7
+  languageName: node
+  linkType: hard
+
 "seek-bzip@npm:^1.0.5":
   version: 1.0.6
   resolution: "seek-bzip@npm:1.0.6"
@@ -27485,6 +27564,15 @@ fsevents@^1.2.7:
   version: 0.2.2
   resolution: "stream-to@npm:0.2.2"
   checksum: 06a3f163cfc609a7dc6952f0d953e67f5dabf68c75a7349cc0656ed4e211806e58c69ba1270263ec33c288aaf1468386c3055d592e18b76bc0f13e322ab78068
+  languageName: node
+  linkType: hard
+
+"stream@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "stream@npm:0.0.2"
+  dependencies:
+    emitter-component: ^1.1.1
+  checksum: 43d89e176c282234d452754f9b55a82c74ea68345bf6176af32c4c213801f88df7984c83ec5a735457705dddf4668373edb9f0ec270a7491e1d881631a763978
   languageName: node
   linkType: hard
 

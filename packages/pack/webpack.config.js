@@ -40,9 +40,9 @@ const getConfig = (env) => {
         resolve: {
             extensions: ['.js', '.tsx', '.ts'],
             fallback: {
-                crypto: false,
                 buffer: false,
-                stream: false,
+                crypto: require.resolve('crypto-browserify'),
+                stream: require.resolve('stream'),
                 iconv: false,
                 path: false,
                 punycode: false,
@@ -75,7 +75,6 @@ const getConfig = (env) => {
         plugins: getPlugins(options),
         optimization: getOptimizations(options),
         devServer: {
-            
             hot: !options.isProduction,
             devMiddleware: {
                 stats: 'minimal',
@@ -110,7 +109,6 @@ const getConfig = (env) => {
                     },
                 },
             }),
-            
         },
     };
 };
