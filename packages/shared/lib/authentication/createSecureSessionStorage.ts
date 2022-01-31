@@ -2,6 +2,7 @@ import createStore from '../helpers/store';
 import { save, load } from '../helpers/secureSessionStorage';
 
 const createSecureSessionStorage = () => {
+    //debugger
     const store = createStore(load());
 
     if ('onpagehide' in window) {

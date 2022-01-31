@@ -200,23 +200,23 @@ export const handleUnlock = async ({
     clearKeyPassword: string;
     isOnePasswordMode: boolean;
 }) => {
-    // debugger
+    //debugger
     const { userSaltResult, loginPassword } = cache;
     if (!userSaltResult) {
         throw new Error('Invalid state');
     }
-    // debugger
+    //debugger
     const [User, KeySalts] = userSaltResult;
-    // debugger
+    //debugger
     await wait(500);
-    // debugger
+    //debugger
     const result = await handleUnlockKey(User, KeySalts, clearKeyPassword).catch(() => undefined);
     if (!result) {
         const error = new Error(c('Error').t`Incorrect mailbox password. Please try again`);
         error.name = 'PasswordError';
         throw error;
     }
-    // debugger
+    //debugger
     return handleKeyUpgrade({
         cache,
         loginPassword,
@@ -253,9 +253,9 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
-    // debugger
+    //debugger
     const { hasTotp, hasUnlock, hasU2F, authApi, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
-
+    //debugger
     if (from === AuthStep.LOGIN && hasTotp) {
         return {
             cache,
@@ -272,25 +272,28 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     // Special case for the admin panel, return early since it can not get key salts.
     if (ignoreUnlock) {
+        //debugger
         return finalizeLogin({
             cache,
             loginPassword,
         });
     }
-
+    //debugger
     if (!cache.userSaltResult) {
+        //debugger
         cache.userSaltResult = await Promise.all([
             authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
             authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
         ]);
     }
 
-    // debugger
+    //debugger
 
     const [User] = cache.userSaltResult;
-    // debugger
+    //debugger
 
     if (User.Keys.length === 0) {
+        //debugger
         if (hasGenerateKeys) {
             if (User.Role === USER_ROLES.MEMBER_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
                 return { cache, to: AuthStep.NEW_PASSWORD };
@@ -304,10 +307,10 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
                 }
                 // If the member is the super owner, then fall through to the automatic setup
             }
-            // debugger
+            //debugger
             return handleSetupPassword({ cache, newPassword: loginPassword });
         }
-        // debugger
+        //debugger
         return finalizeLogin({ cache, loginPassword, user: User });
     }
 
@@ -317,7 +320,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
             to: AuthStep.UNLOCK,
         };
     }
-    // debugger
+    //debugger
     return handleUnlock({ cache, clearKeyPassword: loginPassword, isOnePasswordMode: true });
 };
 
@@ -365,20 +368,20 @@ export const handleLogin = async ({
     keyMigrationFeatureValue: number;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
-    // debugger
+    //debugger
     const infoResult = await api<InfoResponse>(getInfo(username));
-    // debugger
+    //debugger
     const { authVersion, result: authResult } = await loginWithFallback({
         api,
         credentials: { username, password },
         initialAuthInfo: infoResult,
         payload,
     });
-    // debugger
+    //debugger
     const { UID, AccessToken } = authResult;
-    // debugger
+    //debugger
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
-    // debugger
+    //debugger
 
     const cache: AuthCacheResult = {
         authResult,
@@ -392,7 +395,7 @@ export const handleLogin = async ({
         hasGenerateKeys,
         keyMigrationFeatureValue,
     };
-    // debugger
+    //debugger
 
     return next({ cache, from: AuthStep.LOGIN });
 };

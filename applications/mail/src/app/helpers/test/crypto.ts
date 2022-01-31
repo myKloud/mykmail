@@ -69,14 +69,14 @@ export const clearApiKeys = () => {
 };
 
 export const generateKeys = async (name: string, email: string): Promise<GeneratedKey> => {
-    // debugger
+    //debugger
     const { publicKeyArmored, privateKeyArmored } = await openpgp.generateKey({
         userIds: [{ name, email }],
     });
-    // debugger
+    //debugger
     const publicKeys = await getKeys(publicKeyArmored);
     const privateKeys = await getKeys(privateKeyArmored);
-    // debugger
+    //debugger
 
     return {
         name,

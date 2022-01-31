@@ -7,7 +7,7 @@ import { fromBN, toBN } from './utils/bigNumber';
 import { checkUsername } from './utils/username';
 import { verifyAndGetModulus } from './utils/modulus';
 import { AUTH_VERSION, SRP_LEN, MAX_VALUE_ITERATIONS } from './constants';
-import InfoCredentials from '../../mykloud/srp';
+import {InfoCredentials} from '../../mykloud/srp';
 
 const ZERO_BN = BigNumber.fromNumber(0);
 const ONE_BN = BigNumber.fromNumber(1);
@@ -217,9 +217,9 @@ export const getSrp = async (
         serverEphemeralArray,
     });
 
-    // debugger
+    //debugger
     const credentialsInfo = await InfoCredentials(ServerEphemeral, Salt, username, password);
-    //  debugger
+    //  //debugger
 
     return {
         clientEphemeral: credentialsInfo.clientEphemeral,

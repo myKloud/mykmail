@@ -20,7 +20,7 @@ const getAddressKeyPassword = (
     if (!organizationKey && Activation) {
         return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
     }
-    //  debugger
+    //  //debugger
     if (Token) {
         return getAddressKeyToken({
             Token,
@@ -31,13 +31,13 @@ const getAddressKeyPassword = (
         });
         
     }
-    // debugger
+    //debugger
 
     return Promise.resolve(keyPassword);
 };
 
 const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassword: string) => {
-    // debugger
+    //debugger
     const privateKey = await decryptPrivateKey(PrivateKey, addressKeyPassword);
     return {
         ID,
@@ -53,24 +53,24 @@ export const getDecryptedAddressKeys = async (
     keyPassword: string,
     organizationKey?: KeyPair
 ): Promise<DecryptedKey[]> => {
-    // debugger
+    //debugger
     if (!addressKeys.length || !userKeys.length) {
         return [];
     }
-    // debugger
+    //debugger
     const userKeysPair = splitKeys(userKeys);
-    // debugger
+    //debugger
     const [primaryKey, ...restKeys] = addressKeys;
-    // debugger
+    //debugger
     const primaryKeyResult = await getAddressKeyPassword(primaryKey, userKeysPair, keyPassword, organizationKey)
         .then((password) =>   getDecryptedAddressKey(primaryKey, password))
         .catch(noop);
-    // debugger
+    //debugger
     // In case the primary key fails to decrypt, something is broken, so don't even try to decrypt the rest of the keys.
     if (!primaryKeyResult) {
         return [];
     }
-    // debugger
+    //debugger
     const restKeyResults = await Promise.all(
         restKeys.map((restKey) => {
             return getAddressKeyPassword(restKey, userKeysPair, keyPassword, organizationKey)
@@ -78,7 +78,7 @@ export const getDecryptedAddressKeys = async (
                 .catch(noop);
         })
     );
-    // debugger
+    //debugger
     return [primaryKeyResult, ...restKeyResults].filter(isTruthy);
 };
 export const getDecryptedAddressKeysHelper = async (

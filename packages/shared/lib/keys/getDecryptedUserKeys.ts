@@ -7,22 +7,22 @@ import { decryptMemberToken } from './memberToken';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 
 export const getUserKeyPassword = ({ Token }: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
-    // debugger
+    //debugger
     if (Token && organizationKey) {
-        // debugger
+        //debugger
         return decryptMemberToken(Token, [organizationKey.privateKey], [organizationKey.publicKey]);
     }
     return keyPassword;
 };
 
 const getDecryptedUserKey = async (Key: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
-    // debugger
+    //debugger
     const { ID, PrivateKey } = Key;
-    // debugger
+    //debugger
     const userKeyPassword = await getUserKeyPassword(Key, keyPassword, organizationKey);
-    // debugger
+    //debugger
     const privateKey = await decryptPrivateKey(PrivateKey, userKeyPassword);
-    // debugger
+    //debugger
     return {
         ID,
         privateKey,
@@ -35,16 +35,16 @@ export const getDecryptedUserKeys = async (
     keyPassword: string,
     organizationKey?: KeyPair
 ): Promise<DecryptedKey[]> => {
-    // debugger
+    //debugger
     if (userKeys.length === 0) {
         return [];
     }
 
     // Attempts to first decrypt the primary key. If this fails, there's no reason to continue with the rest because something is broken.
     const [primaryKey, ...restKeys] = userKeys;
-    // debugger
+    //debugger
     const primaryKeyResult = await getDecryptedUserKey(primaryKey, keyPassword, organizationKey).catch(noop);
-    // debugger
+    //debugger
     if (!primaryKeyResult) {
         return [];
     }
@@ -56,7 +56,7 @@ export const getDecryptedUserKeys = async (
 };
 
 export const getDecryptedUserKeysHelper = async (user: User, keyPassword: string): Promise<DecryptedKey[]> => {
-    // debugger
+    //debugger
     if (!user.OrganizationPrivateKey) {
         return getDecryptedUserKeys(user.Keys, keyPassword);
     }

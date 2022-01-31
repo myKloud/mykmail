@@ -76,7 +76,7 @@ const ENV_CONFIG = Object.keys(APP_CONFIG_JSON).reduce(
 // http://localhost:5000
 // http://apicors-env-3.eba-4pidqpxf.us-east-2.elasticbeanstalk.com
 const API_TARGETS = {
-    prod: 'https://mail.protonmail.com',
+    prod: 'http://localhost:8443',
     localhost: 'https://localhost',
     proxy: '/api',
     ...ENV_CONFIG.api,

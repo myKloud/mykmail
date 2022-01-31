@@ -10,7 +10,7 @@ interface Props {
 
 const EventManagerProvider = ({ eventManager, children }: Props) => {
     useEffect(() => {
-        eventManager.start();
+        // eventManager.start()
         return () => {
             eventManager.stop();
             eventManager.reset();

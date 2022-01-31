@@ -241,12 +241,12 @@ const SendWithErrorsConfirmationModal = ({
             </li>
         );
     };
-
+    //debugger
     const { title, warningText, alertText, alertType, submit, close } = getModalContent(
         cleanSendData.inviteActions,
         inviteActions
     );
-
+    //debugger
     return (
         <FormModal title={title} submit={submit} close={close} hasSubmit={!!submit} onSubmit={handleConfirm} {...rest}>
             <Alert className="mb1" type="warning">

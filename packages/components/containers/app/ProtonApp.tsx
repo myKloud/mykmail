@@ -132,9 +132,9 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             path,
         }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
-            // debugger
+            //debugger
             authentication.setPassword(keyPassword);
-            // debugger
+            //debugger
             if (newLocalID !== undefined) {
                 authentication.setLocalID(newLocalID);
             }
@@ -207,6 +207,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     const logoutListener = useInstance(() => createListeners());
 
     const handleLogout = useCallback((type?: 'soft') => {
+        //debugger
         setAuthData((authData) => {
             // Nothing to logout
             if (!authData.UID) {
@@ -227,13 +228,14 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     const { UID, localID, history, isLoggingOut, consumerLogoutPromise } = authData;
 
     const authenticationValue = useMemo(() => {
-        // debugger
+        //debugger
         if (!UID) {
-            // debugger
+            //debugger
             return {
                 login: handleLogin,
             };
         }
+        //debugger
         return {
             UID,
             localID,
@@ -243,19 +245,28 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
         };
     }, [UID]);
 
+    //debugger
+
     const [, setRerender] = useState<any>();
+    //debugger
     useEffect(() => {
+        //debugger
         if (pathRef.current !== undefined) {
+            //debugger
             // This is to avoid a race condition where the path cannot be replaced imperatively in login or logout
             // because the context will re-render the public app and redirect to a wrong url
             // and while there is a redirect to consume the children are not rendered to avoid the default redirects triggering
+            //debugger
             history.replace(pathRef.current);
+            //debugger
             pathRef.current = undefined;
+            //debugger
             setRerender({});
         }
     }, [pathRef.current, history]);
 
     useEffect(() => {
+        //debugger
         document.querySelector('.app-root-loader')?.classList.add('hidden');
     }, []);
 
